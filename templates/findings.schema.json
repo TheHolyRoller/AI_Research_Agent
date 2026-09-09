@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Research findings file",
+  "type": "object",
+  "required": ["brief_slug", "topic", "question", "generated_at", "findings"],
+  "properties": {
+    "brief_slug": { "type": "string", "minLength": 1 },
+    "topic": { "type": "string", "minLength": 1 },
+    "question": { "type": "string", "minLength": 1 },
+    "generated_at": { "type": "string", "minLength": 1 },
+    "verified_at": { "type": "string" },
+    "findings": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/finding" }
+    }
+  },
+  "$defs": {
+    "finding": {
+      "type": "object",
+      "required": [
+        "id",
+        "topic",
+        "question",
+        "finding",
+        "evidence",
+        "source_title",
+        "source_url",
+        "source_type",
+        "published_date",
+        "retrieved_at",
+        "confidence",
+        "tags",
+        "notes",
+        "stage"
+      ],
+      "properties": {
+        "id": { "type": "string", "pattern": "^F[0-9]{3,}$" },
+        "topic": { "type": "string" },
+        "question": { "type": "string" },
+        "finding": { "type": "string", "minLength": 1 },
+        "evidence": { "type": "string", "minLength": 1 },
+        "source_title": { "type": "string", "minLength": 1 },
+        "source_url": { "type": "string", "minLength": 1 },
+        "source_type": {
+          "type": "string",
+          "enum": ["web", "docs", "paper", "news", "dataset", "other"]
+        },
+        "published_date": { "type": "string" },
+        "retrieved_at": { "type": "string", "minLength": 1 },
+        "confidence": { "type": "string", "enum": ["high", "medium", "low"] },
+        "tags": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "notes": { "type": "string" },
+        "stage": { "type": "string", "enum": ["extract", "verify"] }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

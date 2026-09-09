@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "research-agent"
+version = "0.1.0"
+description = "Markdown-driven Cursor research agent that writes findings to CSV."
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+cursor = ["cursor-sdk"]
+
+[project.scripts]
+research-agent = "research_agent.run:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

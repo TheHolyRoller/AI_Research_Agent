@@ -1,0 +1,25 @@
+{
+  "brief_slug": "example-topic",
+  "topic": "Example topic",
+  "question": "What is the example question?",
+  "generated_at": "2026-09-09T16:00:00+00:00",
+  "verified_at": "2026-09-09T16:05:00+00:00",
+  "findings": [
+    {
+      "id": "F001",
+      "topic": "Example topic",
+      "question": "What is the example question?",
+      "finding": "The product documents a public Python SDK for running agents.",
+      "evidence": "The docs state you can pip install cursor-sdk and call Agent.prompt().",
+      "source_title": "Cursor Python SDK",
+      "source_url": "https://cursor.com/docs/sdk/python",
+      "source_type": "docs",
+      "published_date": "",
+      "retrieved_at": "2026-09-09T16:00:00+00:00",
+      "confidence": "high",
+      "tags": ["sdk", "python"],
+      "notes": "source:S001; verified",
+      "stage": "verify"
+    }
+  ]
+}

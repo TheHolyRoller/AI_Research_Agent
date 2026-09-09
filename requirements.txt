@@ -1,0 +1,2 @@
+# Core pipeline uses the Python standard library only.
+# Optional later: pip install -e ".[cursor]"
