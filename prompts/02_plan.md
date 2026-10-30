@@ -1,6 +1,8 @@
 # Stage 2 — Plan
 
-Load `prompts/00_system.md` and the current brief in `data/briefs/`.
+Canonical guide: `prompts/main.md`. If this file and main.md disagree, follow main.md.
+
+Load `prompts/00_system.md`, `prompts/main.md`, and the current brief in `data/briefs/`.
 
 ## Goal
 
@@ -9,7 +11,7 @@ Write a research plan that can be executed in the gather stage without re-litiga
 ## Write `data/raw/plan.md` with these sections
 
 1. **Question** — copy from the brief
-2. **Sub-questions** — 3 to 7, each answerable with evidence
+2. **Sub-questions** — 3 to 7, each answerable with evidence. For enrichment: who is in charge, what class, what contact path, what proud particular, what problem/offer fit.
 3. **Queries** — search strings you will actually run
 4. **Source types** — where you will look first (docs, papers, news, datasets, forums)
 5. **Priority order** — what you check first vs later

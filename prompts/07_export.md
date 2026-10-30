@@ -1,6 +1,8 @@
 # Stage 7 — Export
 
-Load `prompts/00_system.md` and confirmed `data/raw/findings.json`.
+Canonical guide: `prompts/main.md`. If this file and main.md disagree, follow main.md.
+
+Load `prompts/00_system.md`, `prompts/main.md`, and confirmed `data/raw/findings.json`.
 
 ## Goal
 
@@ -16,7 +18,8 @@ python -m research_agent export --input data/raw/findings.json --output data/out
 ```
 
 3. Read the command output. Confirm the row count matches `findings.length`.
-4. Open `data/output/findings.csv` and spot-check 2–3 rows against the JSON.
+4. Open the output CSV and spot-check 2–3 rows against the JSON.
+5. For enrichment, write the outreach CSV from verified findings plus class, contacts, compliment, and the matching pitch template in `prompts/main.md`. Use a job-specific `--output` when the brief names one. Do not overwrite `data/output/findings.csv` unless the user named that file.
 
 ## If export fails
 
@@ -24,6 +27,7 @@ Fix the JSON (types, missing fields, invalid `source_type` / `confidence`) and r
 
 ## Done when
 
-- `data/output/findings.csv` exists
+- The named output CSV exists (job-specific path, or `data/output/findings.csv`)
 - Row count matches verified findings
+- Enrichment outreach rows use the class-matched pitch from `prompts/main.md`
 - You report the output path, row count, and where the synthesis lives

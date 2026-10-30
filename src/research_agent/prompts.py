@@ -5,6 +5,7 @@ from pathlib import Path
 from research_agent.paths import PROMPTS_DIR
 
 STAGE_FILES = {
+    "main": "main.md",
     "system": "00_system.md",
     "intake": "01_intake.md",
     "plan": "02_plan.md",
@@ -27,11 +28,13 @@ PIPELINE_ORDER = [
     "export",
 ]
 
+STAGE_CHOICES = ["main", *PIPELINE_ORDER, "icebreaker"]
+
 
 def prompt_path(stage: str) -> Path:
     key = stage.lower()
     if key not in STAGE_FILES:
-        known = ", ".join(PIPELINE_ORDER)
+        known = ", ".join(STAGE_CHOICES)
         raise ValueError(f"Unknown stage {stage!r}. Known: {known}")
     path = PROMPTS_DIR / STAGE_FILES[key]
     if not path.exists():
@@ -49,7 +52,5 @@ def stitch(include_index: bool = False) -> str:
         index = PROMPTS_DIR / "_index.md"
         if index.exists():
             parts.append(index.read_text(encoding="utf-8").rstrip())
-    for stage in PIPELINE_ORDER:
-        body = load_stage(stage).rstrip()
-        parts.append(body)
+    parts.append(load_stage("main").rstrip())
     return "\n\n---\n\n".join(parts) + "\n"

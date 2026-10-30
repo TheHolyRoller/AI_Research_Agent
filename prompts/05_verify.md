@@ -1,6 +1,8 @@
 # Stage 5 — Verify
 
-Load `prompts/00_system.md`, the brief, sources, and `data/raw/findings.json`.
+Canonical guide: `prompts/main.md`. If this file and main.md disagree, follow main.md.
+
+Load `prompts/00_system.md`, `prompts/main.md`, the brief, sources, and `data/raw/findings.json`.
 
 ## Goal
 

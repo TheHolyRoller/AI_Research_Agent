@@ -1,6 +1,8 @@
 # Stage 3 — Gather
 
-Load `prompts/00_system.md`, the brief, and `data/raw/plan.md`.
+Canonical guide: `prompts/main.md`. If this file and main.md disagree, follow main.md.
+
+Load `prompts/00_system.md`, `prompts/main.md`, the brief, and `data/raw/plan.md`.
 
 ## Goal
 
@@ -36,6 +38,7 @@ Also keep a short **Rejected** section at the bottom for notable misses (paywall
 - If a page cannot be fetched, say so and skip it. Do not guess the contents.
 - Capture `published` when the page states it; otherwise leave it blank.
 - For `quick` briefs, stop at 5–8 solid sources. For `standard`, 8–15. For `deep`, keep going until success criteria in the plan are met or you hit diminishing returns.
+- For enrichment, visit About, Contact, and vendor/partnership pages on purpose. If phone and email are both missing on a web job, capture the contact page URL anyway. For LinkedIn, Facebook, and Instagram, still gather the official site when the profile will not load; phone and email are optional on those channels.
 
 ## Done when
 

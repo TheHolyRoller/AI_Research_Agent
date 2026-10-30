@@ -1,6 +1,8 @@
 # Stage 4 — Extract
 
-Load `prompts/00_system.md`, the brief, `data/raw/plan.md`, and `data/raw/sources.md`.
+Canonical guide: `prompts/main.md`. If this file and main.md disagree, follow main.md.
+
+Load `prompts/00_system.md`, `prompts/main.md`, the brief, `data/raw/plan.md`, and `data/raw/sources.md`.
 
 ## Goal
 
@@ -41,6 +43,7 @@ Each item in `findings` must match `templates/findings.schema.json` and `templat
 - No finding without a `source_url` that appears in `data/raw/sources.md`.
 - Do not copy marketing language as fact.
 - If sources conflict, extract both claims as separate records and note the conflict in `notes`. Do not pick a winner yet.
+- For enrichment, classify each company before writing outreach copy. Extract decision-maker or explicit gap, class, one proud particular or explicit gap, and contact path. On web jobs, if phone and email are both missing, flag that and keep the contact-page URL. LinkedIn, Facebook, and Instagram rows do not require phone or email; owner and compliment still have to be specific. Compliments and pitches are not `finding` text.
 
 ## Done when
 

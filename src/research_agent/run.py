@@ -9,7 +9,7 @@ from pathlib import Path
 
 from research_agent.csv_export import write_csv
 from research_agent.paths import BRIEF_TEMPLATE, BRIEFS_DIR, DEFAULT_CSV, DEFAULT_FINDINGS
-from research_agent.prompts import PIPELINE_ORDER, load_stage, stitch
+from research_agent.prompts import STAGE_CHOICES, load_stage, stitch
 from research_agent.schema import parse_findings_file, unused_field_guard
 
 SLUG_RE = re.compile(r"[^a-z0-9]+")
@@ -82,7 +82,7 @@ def build_parser() -> argparse.ArgumentParser:
     prompts_cmd = sub.add_parser("prompts", help="Print prompt files")
     prompts_cmd.add_argument(
         "--stage",
-        choices=PIPELINE_ORDER,
+        choices=STAGE_CHOICES,
         help="Print a single stage instead of the full chain",
     )
     prompts_cmd.add_argument(
